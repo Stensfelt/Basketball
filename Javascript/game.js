@@ -29,13 +29,7 @@ function randomX(){
 }
 
 function moveBall() {
-<<<<<<< HEAD
   $("#basketball").animate({marginTop: '900'}, 1500, "linear", function() {
     randomBasketBalls();
-=======
-  $("#basketball").animate({bottom: '0'}, 1500, "linear", function() {
-    
->>>>>>> origin/master
   });
-  randomBasketBalls();
 }
