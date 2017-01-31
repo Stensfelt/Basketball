@@ -35,25 +35,27 @@ function moveBall() {
   });
 }
 
-$(window).keypress(function(e) {
+$(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
   var isAnimating = $("#basketball").is(':animated'); //Returnerar True om variabeln genomgår en animation
 
   if (isAnimating == false) //Om animationen är pausad
   {
-    if (e.keyCode == 0 || e.keyCode == 32) //Om mellanslag trycks ner
+    if (e.keyCode == 0 || e.keyCode == 32) //Om mellanslag trycks ner (keyCode för mellanslag är antingen 0 eller 32, fråga mig inte varför...)
     {
-      document.getElementById("korgDiv").onmousemove = function(){Test()};        //Sätter igång rörerlsen för korg och plank
-      $("#startGameDiv").css("display", "none");                                     //Gör "Start"-knappen osynlig
-        moveBall();                                                      //Kör igång animationen
+      document.getElementById("korgDiv").onmousemove = function(){Test()};   //Sätter igång rörelsen för korg och plank
+      $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
+        moveBall();  //Kör igång animationen
     }
   }
 
   else //Om animation inte är pausad
     {
-      $("#startGameDiv").css("display", "initial");
-      $("#startGameParagraph").text("Paused");
-      document.getElementById("korgDiv").onmousemove = false; //Avaktiverar rörelsen för kort och plank 
-      $("#basketball").stop();  //Pausar animationen
+      if (e.keyCode == 0 || e.keyCode == 32)
+      {
+        $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
+        $("#startGameParagraph").text("Paused"); //Gör om texten från "Start" till "Paused"
+        document.getElementById("korgDiv").onmousemove = false; //Avaktiverar rörelsen för korg och plank 
+        $("#basketball").stop();  //Pausar animationen
+      }
     }
-  
 });
