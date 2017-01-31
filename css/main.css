@@ -12,10 +12,12 @@
   background-color: white;
   background: transparent;
   color: #891811;
+  cursor: pointer;
 }
 
 #play:hover, #changeColour:hover {
   transform: rotate(10deg);
+  font-weight: bold;
 }
 
 #plank {
