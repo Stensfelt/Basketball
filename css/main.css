@@ -15,6 +15,7 @@
   font-family: regular;
   color: #891811;
   cursor: pointer;
+  font-family: collage;
 }
 
 #play:hover, #changeColour:hover {
