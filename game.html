@@ -3,13 +3,18 @@
 	<head>
 		<title>Basketball</title>
 		<link rel="stylesheet" type="text/css" href="css/game.css">
-		<script type="text/javascript" src = "Javascript/game.js"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type ="text/javascript">
+		window.jQuery ||
+		document.write('<script src="/jquery-1.9.1.min.js"><\/script>');
+		</script>
+		<script type="text/javascript" src="Javascript/gameJQuery.js"></script>
 	</head>
 	<body>
-		<div id = "korgDiv" onmousemove = "Test();">
-			<img id = "plank"src="images/Plank.png">
-			<img id = "korg" src="images/Korg2.png">
-			<img id = "basketball" src="images/Boll.png" onload = "randomBasketballs();">
+		<div id="korgDiv" onmousemove ="Test();">
+			<img id="plank"src="images/Plank.png">
+			<img id="korg" src="images/Korg2.png">
+			<img id="basketball" src="images/Boll.png" onload="randomBasketballs();">
 		</div>
 	</body>
 </html>
