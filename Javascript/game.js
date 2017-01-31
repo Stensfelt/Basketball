@@ -3,7 +3,7 @@ function Test(){
     //var y = event.clientY;     // Hämtar y-koordinater för musen
     moveHoop(x)
 }
-var xCoordinate = 0;
+
 function moveHoop(a) {
   //alert("MouseX = " + a + ", MouseY = " + b);
   a = a + -70;
