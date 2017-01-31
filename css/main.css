@@ -1,11 +1,11 @@
 #menu {
   width: 300px;
-  font-size: 30px;
+  font-size: 40px;
   margin: auto;
   margin-top: 200px;
 }
 
-#changeColour, #play {
+#changeName, #play {
   height: 50px;
   text-align: center;
   margin-top: 40px;
@@ -16,9 +16,10 @@
   cursor: pointer;
 }
 
-#play:hover, #changeColour:hover {
-  transform: rotate(10deg);
+#play:hover, #changeName:hover {
+  transform: rotate(8deg);
   font-weight: bold;
+  text-shadow: 2px 2px black;
 }
 
 #plank {
