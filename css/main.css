@@ -10,8 +10,8 @@
   text-align: center;
   margin-top: 40px;
   background-color: white;
-  border: 1px solid;
   background: transparent;
+  color: #891811;
 }
 
 #play:hover, #changeColour:hover {
@@ -19,7 +19,10 @@
 }
 
 #plank {
-  
+  margin-left: 417px;
+  margin-top: -100px;
+  position: absolute;
+  z-index: -1;
 }
 
 @font-face {
