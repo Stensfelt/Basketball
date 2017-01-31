@@ -1,27 +1,30 @@
-
-
 #menu {
-  border: 3px solid black;
   margin-top: 200px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 500px;
+  margin-right: 500px;
   font-size: 30px;
-  background-color: #f07e00;
 }
 
 #play {
+  border: 10px solid darkred;
+  border-style: double;
   position: relative;
   height: 50px;
   text-align: center;
+  background-color: white;
 
 }
 
 #colour {
+  border: 1px solid black;
   position: relative;
   height: 50px;
   text-align: center;
+  margin-top: 40px;
+  background-color: #f07e00;
 }
 
 #play:hover, #colour:hover {
-  background: white;
+  background-color: #c65107;
+  transform: skew(-10deg);
 }
