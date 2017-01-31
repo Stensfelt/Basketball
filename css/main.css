@@ -3,10 +3,10 @@
   height: 290px;
   font-size: 40px;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 0px;
   background-image: url("../images/PlankTom.png");
   background-repeat: no-repeat;
-  padding-top: 71px;
+  padding-top: 70px;
 }
 
 .menuButton{
@@ -33,11 +33,12 @@
   margin-top: -95px;
 }
 
-#logo{
-  margin-left: 400px;
-  margin-top: 400px;
-  position: absolute;
+#logoDiv{
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 @font-face {
   font-family: college;
