@@ -4,8 +4,6 @@ function Test(){
     moveHoop(x)
 }
 
-
-
 function moveHoop(a) {
   //alert("MouseX = " + a + ", MouseY = " + b);
   a = a + -70;
@@ -14,5 +12,13 @@ function moveHoop(a) {
   document.getElementById('korg').style.marginLeft = a + "px";
   document.getElementById('plank').style.marginLeft = b + "px";
   //document.getElementById('basketkorg').style.marginTop = b + "px";
-  
+}
+
+function randomBasketballs(){
+  var basketball = document.getElementById("basketball");
+  basketball.style.marginTop = "20px";
+  var xCoordinate = Math.floor((Math.random() * 1100) + 1);
+  basketball.style.marginLeft = xCoordinate + "px";
+  basketball.style.WebkitAnimationPlayState = "running";
+  setTimeout(randomBasketballs, 5000);
 }

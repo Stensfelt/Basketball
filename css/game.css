@@ -14,3 +14,20 @@
 	bottom: 110px;
 	position: absolute;
 }
+#basketball{
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 470px;
+	width: 110px;
+
+	animation-name: fallingsBalls;
+	animation-duration: 3s;
+	animation-delay: 2s;
+	animation-play-state: paused;
+	animation-iteration-count: infinite;
+}
+@keyframes fallingsBalls {
+    0%   {margin-top: 20px;}
+
+    100%  {margin-top: 500px;}
+}
