@@ -12,11 +12,17 @@
   background-color: white;
   border: 1px solid;
   background: transparent;
+<<<<<<< HEAD
   font-family: regular;
+=======
+  color: #891811;
+  cursor: pointer;
+>>>>>>> origin/master
 }
 
 #play:hover, #changeColour:hover {
   transform: rotate(10deg);
+  font-weight: bold;
 }
 
 #plank {
