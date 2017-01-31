@@ -29,7 +29,7 @@ function randomX(){
 }
 
 function moveBall() {
-  $("#basketball").animate({bottom: '0'}, 2000, "linear", function() {
-    
+  $("#basketball").animate({bottom: '0'}, 1500, "linear", function() {
+    randomBasketBalls();
   });
 }
