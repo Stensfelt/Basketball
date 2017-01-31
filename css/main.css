@@ -30,8 +30,13 @@
   position: absolute;
   z-index: -1;
   margin-left: 417px;
-  margin-top: -110px;
+  margin-top: -95px;
+}
 
+#logo{
+  margin-left: 400px;
+  margin-top: 400px;
+  position: absolute;
 }
 
 @font-face {
