@@ -12,8 +12,9 @@ function moveHoop(a) {
 }
 
 $(document).ready(function(){
-  $("#basketball").click(function(){
-    randomBasketBalls();
+  $("#startGameDiv").click(function(){
+    $("#startGameDiv").css("display", "none");
+    moveBall();
   });
 });
 
@@ -33,3 +34,26 @@ function moveBall() {
     randomBasketBalls();
   });
 }
+
+$(window).keypress(function(e) {
+  var isAnimating = $("#basketball").is(':animated'); //Returnerar True om variabeln genomgår en animation
+
+  if (isAnimating == false) //Om animationen är pausad
+  {
+    if (e.keyCode == 0 || e.keyCode == 32) //Om mellanslag trycks ner
+    {
+      document.getElementById("korgDiv").onmousemove = function(){Test()};        //Sätter igång rörerlsen för korg och plank
+      $("#startGameDiv").css("display", "none");                                     //Gör "Start"-knappen osynlig
+        moveBall();                                                      //Kör igång animationen
+    }
+  }
+
+  else //Om animation inte är pausad
+    {
+      $("#startGameDiv").css("display", "initial");
+      $("#startGameParagraph").text("Paused");
+      document.getElementById("korgDiv").onmousemove = false; //Avaktiverar rörelsen för kort och plank 
+      $("#basketball").stop();  //Pausar animationen
+    }
+  
+});
