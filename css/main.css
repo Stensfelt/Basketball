@@ -12,6 +12,7 @@
   background-color: white;
   border: 1px solid;
   background: transparent;
+  font-family: regular;
 }
 
 #play:hover, #changeColour:hover {
@@ -19,10 +20,15 @@
 }
 
 #plank {
-  
+
 }
 
 @font-face {
-  font-family: collage;
-  src: url(/fonts/JACKPORT COLLEGE NCV.ttf;
+  font-family: college;
+  src: url(../fonts/JACKPORT_COLLEGE_NCV.ttf);
+}
+
+@font-face {
+  font-family: regular;
+  src: url(../fonts/JACKPORT_REGULAR_NCV.ttf);
 }
