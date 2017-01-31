@@ -1,8 +1,8 @@
 #menu {
-  margin-top: 200px;
-  margin-left: 500px;
-  margin-right: 500px;
+  width: 300px;
   font-size: 30px;
+  margin: auto;
+  margin-top: 200px;
 }
 
 #play {
@@ -26,5 +26,5 @@
 
 #play:hover, #colour:hover {
   background-color: #c65107;
-  transform: skew(-10deg);
+  transform: rotate(2deg);
 }
