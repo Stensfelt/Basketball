@@ -19,6 +19,12 @@
 	margin-top: 200px;
 	margin-left: 470px;
 	width: 110px;
+}
+/*#basketball{
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 470px;
+	width: 110px;
 
 	animation-name: fallingsBalls;
 	animation-duration: 3s;
@@ -31,3 +37,4 @@
 
     100%  {margin-top: 500px;}
 }
+*/

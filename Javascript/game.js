@@ -3,7 +3,7 @@ function Test(){
     //var y = event.clientY;     // Hämtar y-koordinater för musen
     moveHoop(x)
 }
-
+var xCoordinate = 0;
 function moveHoop(a) {
   //alert("MouseX = " + a + ", MouseY = " + b);
   a = a + -70;
@@ -14,11 +14,15 @@ function moveHoop(a) {
   //document.getElementById('basketkorg').style.marginTop = b + "px";
 }
 
+/*
 function randomBasketballs(){
   var basketball = document.getElementById("basketball");
   basketball.style.marginTop = "20px";
-  var xCoordinate = Math.floor((Math.random() * 1100) + 1);
+  randomX();
   basketball.style.marginLeft = xCoordinate + "px";
   basketball.style.WebkitAnimationPlayState = "running";
-  setTimeout(randomBasketballs, 5000);
 }
+function randomX(){
+  xCoordinate = Math.floor((Math.random() * 1100) + 1);
+}
+*/
