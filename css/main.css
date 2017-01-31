@@ -5,26 +5,19 @@
   margin-top: 200px;
 }
 
-#play {
-  border: 10px solid darkred;
-  border-style: double;
-  position: relative;
-  height: 50px;
-  text-align: center;
-  background-color: white;
-
-}
-
-#colour {
-  border: 1px solid black;
-  position: relative;
+#changeColour, #play {
   height: 50px;
   text-align: center;
   margin-top: 40px;
-  background-color: #f07e00;
+  background-color: white;
+  border: 1px solid;
+  background: transparent;
 }
 
-#play:hover, #colour:hover {
-  background-color: #c65107;
-  transform: rotate(2deg);
+#play:hover, #changeColour:hover {
+  transform: rotate(10deg);
+}
+
+#plank {
+  
 }
