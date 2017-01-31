@@ -1,27 +1,27 @@
-<<<<<<< HEAD
-#play{
-  background-color: #f07e00;
-}
-=======
+
+
 #menu {
   border: 3px solid black;
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
   margin-top: 200px;
   margin-left: 200px;
   margin-right: 200px;
-  text-align: center;
+  font-size: 30px;
+  background-color: #f07e00;
 }
 
 #play {
   position: relative;
+  height: 50px;
+  text-align: center;
+
 }
 
-<<<<<<< Updated upstream
->>>>>>> origin/master
-=======
-#play:hover {
-  background: blue;
->>>>>>> Stashed changes
+#colour {
+  position: relative;
+  height: 50px;
+  text-align: center;
+}
+
+#play:hover, #colour:hover {
+  background: white;
 }
