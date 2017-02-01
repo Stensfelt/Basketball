@@ -13,7 +13,6 @@ function playerName ()
           outputName = inputName;
       }
       document.getElementById("currentPlayer").innerHTML = outputName;
-
 }
 
 function namePopup ()
