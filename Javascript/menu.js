@@ -1,3 +1,21 @@
+function playerName ()
+{
+    var inputName = document.getElementById("nameInput").value;
+    var outputName = "";
+
+    if (inputName == "")
+      {
+          alert("Skriv in ditt namn");
+          return false;
+      }
+      else
+      {
+          outputName = inputName;
+      }
+      document.getElementById("currentPlayer").innerHTML = outputName;
+
+}
+
 function namePopup ()
 {
     document.getElementById("buttonUsername").style.opacity = "0";

@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+#currentPlayer {
+  position: absolute;
+}
+
 
 #leftImage {
   position: absolute;

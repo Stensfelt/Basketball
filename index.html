@@ -10,16 +10,19 @@
 		<div id="leftImage">
 			<img src="images/nba_background.png" id="left">
 		</div>
-
 		<div id="logoDiv">
 			<img src="images/lush_logo.png" id="logo">
 		</div>
 
+		<div ="playerName">
+			<h2 id="currentPlayer"></h2>
+		</div>
+
 		<div id="enterName">
-			<fieldset id="nameBox"><Legend onclick="exitName()"> X </legend>
+			<fieldset id="nameBox"><Legend onclick="playerName()"> X </legend>
 				<form id="nameForm">
 					<input type="text" name="nameInput" id="nameInput" placeholder="Skriv in användarnamn"><br>
-					<button id="buttonOk" onclick="userName()"><p id = "Ok">Ok!</p></button>
+					<button id="buttonOk"><p onclick="userName()" id="Ok">Ok!</p></button>
 				</form>
 			</fieldset>
 		</div>
