@@ -54,6 +54,10 @@
 	margin-top: 10px;
 	margin-bottom: 0;
 }
+#menu {
+	position: absolute;
+	z-index: 100;
+}
 .inMenu {
 	font-family: regular;
 	border: 1px solid grey;
@@ -68,6 +72,11 @@
 }
 #homeButtonDiv {
 	cursor: pointer;
+}
+#muteDiv {
+	cursor: pointer;
+}
+#currentScoreDiv {
 }
 #home {
 	margin-top: 10px;
