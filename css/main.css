@@ -1,3 +1,11 @@
+#leftImage {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+  margin-top: 110px;
+  margin-left: 0px;
+}
+
 #menu {
   width: 500px;
   height: 400px;
@@ -13,12 +21,14 @@
 .menuButton{
   height: 40px;
   text-align: center;
-  margin-top: 20px;
   background-color: white;
   background: transparent;
   font-family: regular;
   color: #891811;
   cursor: pointer;
+  width: 180px;
+  margin: auto;
+  padding: 10px;
 }
 
 .menuButton:hover {
