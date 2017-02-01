@@ -41,7 +41,7 @@ $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar re
 
   if (isAnimating == false) //Om animationen är pausad
   {
-    if (e.keyCode == 32) //Om mellanslag trycks ner (keyCode för mellanslag är antingen 0 eller 32, fråga mig inte varför...)
+    if (e.keyCode == 32) //Om mellanslag trycks ner (keyCode för mellanslag är 0)
     {
       document.getElementById("korgDiv").onmousemove = function(){Test()};   //Sätter igång rörelsen för korg och plank
       $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
