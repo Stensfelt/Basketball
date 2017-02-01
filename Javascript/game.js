@@ -7,13 +7,14 @@ function moveHoop(a) {
   a = a + -70;
   var b = a + -50;
 
-  document.getElementById('korg').style.marginLeft = a + "px";
-  document.getElementById('plank').style.marginLeft = b + "px"; 
+  $("#korg").css("marginLeft", a + "px");
+  $("#plank").css("marginLeft", b + "px");
 }
 
 $(document).ready(function(){
   $("#startGameDiv").click(function(){
     $("#startGameDiv").css("display", "none");
+    document.getElementById("korgDiv").onmousemove = function(){Test()};
     moveBall();
   });
 });
