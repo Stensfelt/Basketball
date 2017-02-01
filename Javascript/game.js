@@ -26,7 +26,7 @@ function randomBasketBalls() {
 }
 
 function randomX(){
-  xCoordinate = Math.floor((Math.random() * (screenSize - 110)) + 1);
+  xCoordinate = Math.floor((Math.random() * (screenSize - 110)));
   $("#basketball").css("marginLeft", xCoordinate + "px");
 }
 
@@ -41,7 +41,7 @@ $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar re
 
   if (isAnimating == false) //Om animationen är pausad
   {
-    if (e.keyCode == 0 || e.keyCode == 32) //Om mellanslag trycks ner (keyCode för mellanslag är antingen 0 eller 32, fråga mig inte varför...)
+    if (e.keyCode == 32) //Om mellanslag trycks ner (keyCode för mellanslag är antingen 0 eller 32, fråga mig inte varför...)
     {
       document.getElementById("korgDiv").onmousemove = function(){Test()};   //Sätter igång rörelsen för korg och plank
       $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
@@ -51,7 +51,7 @@ $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar re
 
   else //Om animation inte är pausad
     {
-      if (e.keyCode == 0 || e.keyCode == 32)
+      if (e.keyCode == 32)
       {
         $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
         $("#startGameParagraph").text("Paused"); //Gör om texten från "Start" till "Paused"

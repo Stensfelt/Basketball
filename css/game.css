@@ -2,12 +2,10 @@
   font-family: regular;
   src: url(../fonts/JACKPORT_REGULAR_NCV.ttf);
 }
-
 #korgDiv{
 	width: 98.3%;
 	height: 97%;
 	position: fixed;
-
 }
 #korg{
 	width: 140px;
