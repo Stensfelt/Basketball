@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8"/>
 		<title>Lush Ball</title>
     <link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="Javascript/menu.js"> </script>
 	</head>
 	<body>
 		<div id="leftImage">
@@ -13,11 +15,21 @@
 			<img src="images/lush_logo.png" id="logo">
 		</div>
 
+		<div id="enterName">
+			<fieldset id="nameBox"><Legend onclick="exitName()"> X </legend>
+				<form id="nameForm">
+					<input type="text" name="nameInput" id="nameInput" placeholder="Skriv in användarnamn"><br>
+					<button id="buttonOk" onclick="userName()"><p id = "Ok">Ok!</p></button>
+				</form>
+			</fieldset>
+		</div>
+
     <div id="menu">
-      <div class="menuButton" onclick="location.href='game.html';">Spela</div>
-      <div class="menuButton">Välj namn</div>
-			<div class="menuButton" onclick="location.href='leaderboards.html';">Topplista</div>
+      <div class="menuButton" id="buttonPlay" onclick="location.href='game.html';">Spela</div>
+      <div class="menuButton" id="buttonUsername"onclick="namePopup()">Välj namn</div>
+			<div class="menuButton" id="buttonLeader" onclick="location.href='leaderboards.html';">Topplista</div>
     </div>
+
 
   </body>
 </html>

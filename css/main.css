@@ -1,3 +1,30 @@
+#enterName {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  margin-left: 43%;
+  margin-top: 8%;
+}
+#nameInput {
+  padding: 10px;
+  border-color: #891811;
+}
+#buttonOk {
+  color: #891811;
+  background-color: white;
+  width: 100%;
+  font-family: regular;
+  font-size: 18px;
+}
+#Ok{
+  margin-top: 5px;
+  margin-bottom: -2px;
+}
+#nameBox:hover {
+  cursor: pointer;
+}
+
+
 #leftImage {
   position: absolute;
   z-index: -1;
@@ -52,7 +79,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 @font-face {
   font-family: college;
