@@ -26,7 +26,7 @@ function randomBasketBalls() {
 }
 
 function randomX(){
-  xCoordinate = Math.floor((Math.random() * 1100) + 1);
+  xCoordinate = Math.floor((Math.random() * (screenSize - 110)) + 1);
   $("#basketball").css("marginLeft", xCoordinate + "px");
 }
 
@@ -59,4 +59,9 @@ $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar re
         $("#basketball").stop();  //Pausar animationen
       }
     }
+});
+var screenSize = $(window).width();
+
+$(window).resize(function(){
+  screenSize = $(window).width();
 });
