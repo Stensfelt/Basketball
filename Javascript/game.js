@@ -15,6 +15,9 @@ $(document).ready(function(){
   $("#startGameDiv").click(function(){
     $("#startGameDiv").css("display", "none");
     document.getElementById("korgDiv").onmousemove = function(){Test()};
+    $("#korg").css("opacity", "initial");
+    $("#plank").css("opacity", "initial");
+    $("#basketball").css("opacity", "initial"); 
     moveBall();
   });
 });
@@ -45,10 +48,12 @@ $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar re
     {
       document.getElementById("korgDiv").onmousemove = function(){Test()};   //Sätter igång rörelsen för korg och plank
       $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
-        moveBall();  //Kör igång animationen
+      moveBall();  //Kör igång animationen
+      $("#korg").css("opacity", "initial");
+      $("#plank").css("opacity", "initial");
+      $("#basketball").css("opacity", "initial");  
     }
   }
-
   else //Om animation inte är pausad
     {
       if (e.keyCode == 32)
@@ -57,6 +62,9 @@ $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar re
         $("#startGameParagraph").text("Paused"); //Gör om texten från "Start" till "Paused"
         document.getElementById("korgDiv").onmousemove = false; //Avaktiverar rörelsen för korg och plank 
         $("#basketball").stop();  //Pausar animationen
+        $("#korg").css("opacity", "0.6");
+        $("#plank").css("opacity", "0.6");
+        $("#basketball").css("opacity", "0.6");
       }
     }
 });
