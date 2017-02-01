@@ -2,18 +2,6 @@
   font-family: regular;
   src: url(../fonts/JACKPORT_REGULAR_NCV.ttf);
 }
-#verticalLine{
-	margin-left: 100px;
-	position: absolute;
-	height: 620px;
-	width: 0;
-}
-#verticalLine2{
-	margin-left: 1150px;
-	position: absolute;
-	height: 620px;
-	width: 0;
-}
 #korgDiv{
 	width: 98.3%;
 	height: 97%;
