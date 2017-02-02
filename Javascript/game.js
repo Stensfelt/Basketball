@@ -8,26 +8,17 @@ $(document).ready(function(){
     moveBall();
   });  
 
-  var ball = $("#basketball");
-  var ballSize = {
-    height: ball.height(),
-    width: ball.width()
-  };
-
-  var hoop = $("#korg");
-  var hoopSize = {
-    height: hoop.height(),
-    width: hoop.width()
-  };
-
   var z = 0;
 
-  function goal(position1, size1, position2, size2) {
-    if (  ((position1.left + size1.width)  > position2.left) &&
-          ((position1.top  + size1.height) > position2.top)  &&
-          ((position2.left + size2.width)  > position1.left) &&
-          ((position2.top  + size2.height) > position1.top)) 
-    {       
+  function goal(obj1, obj2) {
+    
+    var rect1 = obj1.getBoundingClientRect();
+    var rect2 = obj2.getBoundingClientRect();
+
+    if (!(rect1.top > rect2.bottom ||
+    rect1.right < rect2.left ||
+    rect1.bottom < rect2.top ||
+    rect1.left > rect2.right)) {
       z++;
       $("#currentScore").text(z);
     }
@@ -41,13 +32,16 @@ $(document).ready(function(){
   function moveHoop(a) {
     a = a + -70;
     var b = a + -50;
+    var c = a + 45;
   
     $("#korg").css("marginLeft", a + "px");
     $("#plank").css("marginLeft", b + "px");
+    $("#korgCount").css("marginLeft", c + "px");
   }
   
   function randomBasketBalls() {
     $("#basketball").css("marginTop", "0px");
+    $("#ballCount").css("marginTop", "0px");
     randomX();
     moveBall();
   }
@@ -55,22 +49,25 @@ $(document).ready(function(){
   function randomX(){
     xCoordinate = Math.floor((Math.random() * (screenSize - 110)));
     $("#basketball").css("marginLeft", xCoordinate + "px");
+    $("#ballCount").css("marginLeft", xCoordinate + "px");
   }
   
   function moveBall() {
     $("#basketball").animate({marginTop: "900"}, {
-      duration: 1500,
+      duration: 2000,
+      easing: "linear",
       step: function(){
-        goal(ball.position(), ballSize, hoop.position(), hoopSize);
+        goal($("#ballCount")[0], $("#korgCount")[0]);
       },
       queue: false,
       complete: function(){randomBasketBalls();}
     });
-  
-  
-    //$("#basketball").animate({marginTop: '900'}, 1500, "linear", function() {
-      //randomBasketBalls();
-    //});
+    $("#ballCount").animate({marginTop: "900"}, {
+      duration: 2000,
+      easing: "linear",
+      queue: false,
+    });
+    //$("#ballCount").animate({marginTop: '900'}, 3000, "linear");
   }
 
   $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
