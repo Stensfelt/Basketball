@@ -9,6 +9,7 @@ $(document).ready(function(){
     $("#plank").css("opacity", "initial");
     $("#basketball").css("opacity", "initial"); 
     playMusic();
+    pauseMusic2();
     randomBasketBalls();
   });
 
@@ -21,10 +22,18 @@ $(document).ready(function(){
   function playMusic() {
     document.getElementById("lushlife").play();
   }
-  
 
+   function playMusic2() {
+    document.getElementById("game_over").currentTime = 1.2;
+    document.getElementById("game_over").play();
+  }
+  
   function pauseMusic() {
     document.getElementById("lushlife").pause();
+  }
+
+  function pauseMusic2() {
+    document.getElementById("game_over").pause();
   }
 
 
@@ -111,6 +120,7 @@ $(document).ready(function(){
       $("#currentScore").text(scoreNow);
       z = 0;
       pauseMusic();
+      playMusic2();
       document.getElementById("lushlife").currentTime = 0;
       if (isAnimating == true)
       {
@@ -138,6 +148,7 @@ $(document).ready(function(){
           $("#korg").css("opacity", "initial");
           $("#plank").css("opacity", "initial");
           $("#basketball").css("opacity", "initial");
+          pauseMusic2();
           playMusic(); 
         }
          

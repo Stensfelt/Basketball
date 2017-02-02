@@ -108,3 +108,8 @@
 	left: 10px;
 	display: none;
 }
+#game_over {
+	bottom:0px;
+	margin-left: 500px;
+	display: none;
+}
