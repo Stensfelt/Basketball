@@ -132,7 +132,7 @@ $(document).ready(function(){
         }
         else
         {
-          document.getElementById("korgDiv").onmousemove = function(){Test()};   //Sätter igång rörelsen för korg och plank
+          document.getElementById("korgDiv").onmousemove = function(){getMouseCoordinates()};   //Sätter igång rörelsen för korg och plank
           $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
           moveBall();  //Kör igång animationen
           $("#korg").css("opacity", "initial");
