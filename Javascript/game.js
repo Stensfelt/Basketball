@@ -38,12 +38,14 @@ $(document).ready(function(){
 
 
   function mute() {
-    if (document.getElementById("lushlife").muted == false) {
+    if (document.getElementById("lushlife").muted == false && document.getElementById("game_over").muted == false) {
       document.getElementById("lushlife").muted = true;
+      document.getElementById("game_over").muted = true;
       $("#mute").attr("src", "images/Mutefalse.png");  
     }
     else {
       document.getElementById("lushlife").muted = false;
+      document.getElementById("game_over").muted = false;
       $("#mute").attr("src", "images/Mute.png"); 
     }
   }
