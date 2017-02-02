@@ -9,6 +9,7 @@ $(document).ready(function(){
   });  
 
   var z = 0;
+  var scoreNow = 0;
 
   function goal(obj1, obj2) {
     
@@ -20,7 +21,6 @@ $(document).ready(function(){
     rect1.bottom < rect2.top ||
     rect1.left > rect2.right)) {
       z++;
-      $("#currentScore").text(z);
     }
   }
 
@@ -41,7 +41,6 @@ $(document).ready(function(){
   
   function randomBasketBalls() {
     $("#basketball").css("marginTop", "0px");
-    $("#ballCount").css("marginTop", "0px");
     randomX();
     moveBall();
   }
@@ -49,25 +48,28 @@ $(document).ready(function(){
   function randomX(){
     xCoordinate = Math.floor((Math.random() * (screenSize - 110)));
     $("#basketball").css("marginLeft", xCoordinate + "px");
-    $("#ballCount").css("marginLeft", xCoordinate + "px");
   }
   
   function moveBall() {
     $("#basketball").animate({marginTop: "900"}, {
-      duration: 2000,
+      duration: 1500,
       easing: "linear",
       step: function(){
-        goal($("#ballCount")[0], $("#korgCount")[0]);
+        goal($("#basketball")[0], $("#korgCount")[0]);
       },
       queue: false,
-      complete: function(){randomBasketBalls();}
+      complete: function(){
+        checkScore();
+        randomBasketBalls();}
     });
-    $("#ballCount").animate({marginTop: "900"}, {
-      duration: 2000,
-      easing: "linear",
-      queue: false,
-    });
-    //$("#ballCount").animate({marginTop: '900'}, 3000, "linear");
+  }
+
+  function checkScore() {
+    if (z > 0) {
+      scoreNow++;
+      $("#currentScore").text(scoreNow);
+      z = 0;
+    }
   }
 
   $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
