@@ -16,13 +16,19 @@ $(document).ready(function(){
   function playMusic() {
     document.getElementById("lushlife").play();
   }
+  
+  function pauseMusic() {
+    document.getElementById("lushlife").pause();
+  }
 
   function mute() {
     if (document.getElementById("lushlife").muted == false) {
-      document.getElementById("lushlife").muted = true;  
+      document.getElementById("lushlife").muted = true;
+      $("#mute").attr("src", "images/Mutefalse.png");  
     }
     else {
       document.getElementById("lushlife").muted = false;
+      $("#mute").attr("src", "images/Mute.png"); 
     }
     
   }
@@ -103,7 +109,8 @@ $(document).ready(function(){
         moveBall();  //Kör igång animationen
         $("#korg").css("opacity", "initial");
         $("#plank").css("opacity", "initial");
-        $("#basketball").css("opacity", "initial");  
+        $("#basketball").css("opacity", "initial");
+        playMusic();  
       }
     }
     else //Om animation inte är pausad
@@ -117,6 +124,7 @@ $(document).ready(function(){
           $("#korg").css("opacity", "0.6");
           $("#plank").css("opacity", "0.6");
           $("#basketball").css("opacity", "0.6");
+          pauseMusic();
         }
       }
   });

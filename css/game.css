@@ -92,7 +92,7 @@
 #home {
 	margin-top: 10px;
 	margin-bottom: 0px;
-	width: 30px;
+	height: 30px;
 }
 #currentScore {
 	margin-top: 10px;
@@ -101,7 +101,7 @@
 #mute {
 	margin-top: 10px;
 	margin-bottom: 0px;
-	width: 30px;
+	height: 30px;
 }
 #lushlife {
 	position: absolute;
