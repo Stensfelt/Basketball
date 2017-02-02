@@ -6,7 +6,26 @@ $(document).ready(function(){
     $("#plank").css("opacity", "initial");
     $("#basketball").css("opacity", "initial"); 
     moveBall();
+    playMusic();
   });  
+
+  $("#muteDiv").click(function(){
+    mute();
+  });
+
+  function playMusic() {
+    document.getElementById("lushlife").play();
+  }
+
+  function mute() {
+    if (document.getElementById("lushlife").muted == false) {
+      document.getElementById("lushlife").muted = true;  
+    }
+    else {
+      document.getElementById("lushlife").muted = false;
+    }
+    
+  }
 
   var z = 0;
   var scoreNow = 0;
