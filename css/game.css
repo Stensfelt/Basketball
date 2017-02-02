@@ -104,7 +104,7 @@
 	height: 30px;
 }
 #lushlife {
-	position: absolute;
 	bottom:10px;
 	left: 10px;
+	display: none;
 }
