@@ -126,7 +126,7 @@ $(document).ready(function(){
     {
       $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
       $("#startGameParagraph").text("Try again");
-      $("#startGameDiv").css("marginTop", "380px");
+      $("#startGameDiv").css("bottom", "220px");
       $("#gameOverDiv").css("display", "block");
       $("#gameOverSummary").css("display", "block");
 
@@ -218,5 +218,4 @@ $(document).ready(function(){
   $(window).resize(function(){
     screenSizeHeight = $(window).height();
   });
-
 });
