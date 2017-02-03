@@ -1,6 +1,10 @@
 $(document).ready(function(){
   var z = 0;
   var scoreNow = 0;
+  var ballSpeed = 2000;
+  var scoreChange = 10;
+  var scoreChangeMeter = 10;
+  var finalScore = 0;
 
   $("#startGameDiv").click(function(){
     $("#startGameDiv").css("display", "none");
@@ -23,17 +27,15 @@ $(document).ready(function(){
     }
   });
 
-
   $("#muteDiv").click(function(){
     mute();
   });
-
 
   function playMusic() {
     document.getElementById("lushlife").play();
   }
 
-   function playMusic2() {
+  function playMusic2() {
     document.getElementById("game_over").currentTime = 1.2;
     document.getElementById("game_over").play();
   }
@@ -45,7 +47,6 @@ $(document).ready(function(){
   function pauseMusic2() {
     document.getElementById("game_over").pause();
   }
-
 
   function mute() {
     if (document.getElementById("lushlife").muted == false && document.getElementById("game_over").muted == false) {
@@ -101,7 +102,7 @@ $(document).ready(function(){
 
   function moveBall() {
     $("#basketball").animate({marginTop: screenSizeHeight}, {
-      duration: 1500,
+      duration: ballSpeed,
       easing: "linear",
       step: function(){
         goal($("#basketball")[0], $("#korgCount")[0]);
@@ -114,13 +115,14 @@ $(document).ready(function(){
   }
 
   function checkScore() {
-    if (z > 0)
+    if (z > 0) //Score!
     {
       scoreNow++;
       $("#currentScore").text(scoreNow);
+      changeSpeed(scoreNow);
       z = 0;
     }
-    else
+    else //Game over!
     {
       $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
       $("#startGameParagraph").text("Try again");
@@ -133,9 +135,9 @@ $(document).ready(function(){
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
       document.getElementById("korgDiv").onmousemove = false;
-      scoreNow = 0;
+      finalScore = scoreNow;
+      reset();
       $("#currentScore").text(scoreNow);
-      z = 0;
       pauseMusic();
       playMusic2();
       document.getElementById("lushlife").currentTime = 0;
@@ -144,6 +146,22 @@ $(document).ready(function(){
         $("#basketball").stop();
       }
     }
+  }
+
+  function changeSpeed(currentScore) {
+    if (currentScore >= scoreChange) {
+      ballSpeed = ballSpeed * 0.9;
+      scoreChange = scoreChange + scoreChangeMeter;
+      scoreChangeMeter = scoreChangeMeter * 1.5;
+    }
+  }
+
+  function reset() {
+    scoreNow = 0;
+    ballSpeed = 2000;
+    scoreChange = 10;
+    scoreChangeMeter = 10;
+    z = 0;
   }
 
   $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
@@ -188,7 +206,6 @@ $(document).ready(function(){
         }
       }
   });
-
 
   var screenSize = $(window).width();
   var screenSizeHeight = $(window).height();
