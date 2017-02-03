@@ -1,11 +1,17 @@
 <?php
 
-include connect.php;
+include "connect.php";
+session_start();
 
-$score = mysqli_real_escape_string($conn, $_POST['title']);
-$username = $_SESSION['idUser'];
+$finalScore = mysqli_real_escape_string($conn, $_POST['phpScore']);
 
-$sql = "INSERT INTO leaderboards (username, score) VALUES ('Andreas', '111')";
+if (isset($_SESSION['username'])) {
+  $username = $_SESSION['username'];
+} else{
+  $username = "unknown";
+}
+
+$sql = "INSERT INTO leaderboards (username, score) VALUES ('$username', '$finalScore')";
 
 if (!mysqli_query($conn, $sql)){
     die('error ' . mysqli_error($conn));

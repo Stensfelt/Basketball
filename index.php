@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_POST['formSubmit'])){
+	 $_SESSION['username'] = $_POST['nameInput'];
+ }
+ ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,7 +20,6 @@
 		<div id="logoDiv">
 			<img src="images/lush_logo.png" id="logo">
 		</div>
-
 		<div ="playerName">
 			<p id="currentPlayer"></p>
 		</div>
@@ -23,11 +29,8 @@
 				<form id="nameForm" method="post">
 					<input type="text" name="nameInput" id="nameInput"
 						<?php
-						if(isset($_POST['formSubmit'])){
-						 $_SESSION['username'] = $_POST['nameInput'];
-					 }
 					 if(!isset($_SESSION['username'])) {
-							echo "placeholder='Skriv in användarnamn'";
+							echo "placeholder='Enter username to show your high score'";
 						} else {
 							echo "value=".$_SESSION['username'];
 						}
@@ -40,16 +43,16 @@
 		</div>
 
     <div id="menu">
-      <div class="menuButton" id="buttonPlay" onclick="location.href='game.html';">Spela</div>
+      <div class="menuButton" id="buttonPlay" onclick="location.href='game.php';">Play</div>
       <div class="menuButton" id="buttonUsername"onclick="namePopup()">
-				<?php 
+				<?php
 				if(!isset($_SESSION['username'])){
-								echo "Välj namn";
+								echo "Pick a name";
 							} else {
 							echo $_SESSION['username'];
 					} ?>
 			</div>
-			<div class="menuButton" id="buttonLeader" onclick="location.href='leaderboards.html';">Topplista</div>
+			<div class="menuButton" id="buttonLeader" onclick="location.href='leaderboards.php';">High scores</div>
     </div>
 
 

@@ -1,3 +1,7 @@
+<?php
+include "connect.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,7 +12,7 @@
 	</head>
 	<body>
 		<div id="homeMenu">
-			<div id="homeButtonDiv" class="inMenu" onclick="location.href='index.html';">
+			<div id="homeButtonDiv" class="inMenu" onclick="location.href='index.php';">
 				<img id="home" class="symbol" src="images/Home.png" alt="Home">
 			</div>
 		</div>
@@ -22,26 +26,20 @@
           <th>Name</th>
           <th>Score</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Johannes</td>
-          <td>142</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Andreas</td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Rickard</td>
-          <td>41</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Joakim</td>
-          <td>2</td>
-        </tr>
+				<?php
+				$rank = 1;
+				$sql = "SELECT * FROM leaderboards ORDER BY score DESC LIMIT 10";
+				$result = $conn->query($sql) or trigger_error($conn->error."[$sql]");
+				while ($row = $result->fetch_assoc()){
+					$name = $row['username'];
+					$score = $row['score'];
+					echo "<tr>";
+					echo "<td>".$rank."</td>";
+					echo "<td>".$row['username']."</td>";
+					echo "<td>".$row['score']."</td>";
+					echo "</tr>";
+				}
+				?>
       </table>
     </div>
   </body>

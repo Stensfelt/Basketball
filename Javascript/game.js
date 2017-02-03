@@ -12,9 +12,8 @@ $(document).ready(function(){
     $("#korg").css("opacity", "initial");
     $("#plank").css("opacity", "initial");
     $("#basketball").css("opacity", "initial");
-    $("#gameOverDiv").css("display", "none");
     $("#gameOverSummary").css("display", "none");
-    $("#finalScore").css("display", "none");
+    $(".gameOver").css("display", "none");
 
     playMusic();
     pauseMusic2();
@@ -134,17 +133,19 @@ $(document).ready(function(){
       $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
       $("#startGameParagraph").text("Try again");
       $("#startGameDiv").css("bottom", "220px");
-      $("#gameOverDiv").css("display", "block");
+
       $("#gameOverSummary").css("display", "block");
       finalScore = scoreNow;
-      $("#finalScore").text(finalScore);
-      $("#finalScore").css("display", "block");
+      $.post("saveScore.php", { phpScore: finalScore });
 
+      $("#finalScore").text(finalScore);
+      $(".gameOver").css("display", "block");
 
       $("#korg").css("opacity", "0.6");
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
       document.getElementById("korgDiv").onmousemove = false;
+
       reset();
       $("#currentScore").text(scoreNow);
       pauseMusic();
