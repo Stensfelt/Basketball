@@ -27,7 +27,7 @@
 	position: absolute;
 	z-index: -2;
 }
-#basketball{
+.basketballs{
 	position: absolute;
 	margin-left: calc(50% - 27.5px);
 	width: 55px;
@@ -72,7 +72,7 @@
 	margin-bottom: 0;
 }
 #gameOverDiv{
-  bottom: 480px;
+  	bottom: 480px;
 	background-color: white;
 	font-family: college;
 	position: absolute;
@@ -82,12 +82,31 @@
 	font-size: 65px;
 	width: 260px;
 	text-align: center;
-  display: none;
+  	display: none;
 }
 #gameOverParagraph{
 	margin-top: 10px;
 	margin-bottom: 0;
 }
+
+#finalScore{
+  	bottom: 350px;
+	background-color: white;
+	font-family: college;
+	position: absolute;
+	margin-left: calc(50% - 130px);
+	z-index: 9;
+	color: #891811;
+	font-size: 65px;
+	width: 260px;
+	text-align: center;
+  	display: none;
+}
+#finalScoreParagraph {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
 
 #gameOverSummary {
   background-color: white;

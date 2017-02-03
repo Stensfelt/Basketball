@@ -14,6 +14,7 @@ $(document).ready(function(){
     $("#basketball").css("opacity", "initial");
     $("#gameOverDiv").css("display", "none");
     $("#gameOverSummary").css("display", "none");
+    $("#finalScore").css("display", "none");
 
     playMusic();
     pauseMusic2();
@@ -114,6 +115,12 @@ $(document).ready(function(){
     });
   }
 
+  /*function addBall(number) {
+    $("#basketball").after('<img id="basketball' + number + '" class="basketballs" src="images/Boll.png">');
+    var newBall = "basketball" + number;
+    randomBasketBalls(newBall);
+  }*/
+
   function checkScore() {
     if (z > 0) //Score!
     {
@@ -129,13 +136,15 @@ $(document).ready(function(){
       $("#startGameDiv").css("bottom", "220px");
       $("#gameOverDiv").css("display", "block");
       $("#gameOverSummary").css("display", "block");
+      finalScore = scoreNow;
+      $("#finalScore").text(finalScore);
+      $("#finalScore").css("display", "block");
 
 
       $("#korg").css("opacity", "0.6");
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
       document.getElementById("korgDiv").onmousemove = false;
-      finalScore = scoreNow;
       reset();
       $("#currentScore").text(scoreNow);
       pauseMusic();
