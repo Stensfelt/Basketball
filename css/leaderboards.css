@@ -1,0 +1,54 @@
+table {
+  width: 1000px;
+  border-collapse: collapse;
+  border: 2px solid #891811;
+  background: #EDE7E4;
+  margin: auto;
+  color: #891811;
+  font-family: regular;
+  font-size: 20px;
+}
+
+td, th {
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(odd) {
+  background: #891811;
+  color: #EDE7E4;
+}
+
+th {
+  background: #5b110b;
+  font-size: 30px;
+  font-weight: normal;
+}
+@font-face {
+  font-family: regular;
+  src: url(../fonts/JACKPORT_REGULAR_NCV.ttf);
+}
+#homeMenu {
+	position: absolute;
+	z-index: 100;
+}
+.inMenu {
+	font-family: regular;
+	border: 1px solid grey;
+	z-index: 9;
+	color: #891811;
+	font-size: 40px;
+	border-radius: 10px;
+	width: 90px;
+	text-align: center;
+	margin-bottom: 5px;
+	box-shadow: 4px 4px 8px -2px rgba(50, 50, 50, 0.75);
+}
+#homeButtonDiv {
+	cursor: pointer;
+}
+#home {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	width: 30px;
+}
