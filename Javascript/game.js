@@ -97,7 +97,7 @@ $(document).ready(function(){
   }
   
   function moveBall() {
-    $("#basketball").animate({marginTop: "900"}, {
+    $("#basketball").animate({marginTop: screenSizeHeight}, {
       duration: 1500,
       easing: "linear",
       step: function(){
@@ -181,9 +181,14 @@ $(document).ready(function(){
 
 
   var screenSize = $(window).width();
+  var screenSizeHeight = $(window).height();
   
   $(window).resize(function(){
     screenSize = $(window).width();
+  });
+
+  $(window).resize(function(){
+    screenSizeHeight = $(window).height();
   });
 
 });
