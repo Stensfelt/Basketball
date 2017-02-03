@@ -150,9 +150,9 @@ $(document).ready(function(){
 
   function changeSpeed(currentScore) {
     if (currentScore >= scoreChange) {
-      ballSpeed = ballSpeed * 0.9;
+      ballSpeed = ballSpeed * 0.8;
       scoreChange = scoreChange + scoreChangeMeter;
-      scoreChangeMeter = scoreChangeMeter * 1.5;
+      scoreChangeMeter = scoreChangeMeter * 1.2;
     }
   }
 
