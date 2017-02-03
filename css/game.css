@@ -14,30 +14,30 @@
 	position: fixed;
 }
 #korg{
-	width: 140px;
-	margin-left: calc(50% - 70px);
+	width: 70px;
+	margin-left: calc(50% - 35px);
 	bottom: 0;
 	position: absolute;
 	z-index: 10;
 }
 #plank{
-	width: 240px;
-	margin-left: calc(50% - 120px);
-	bottom: 110px;
+	width: 120px;
+	margin-left: calc(50% - 60px);
+	bottom: 55px;
 	position: absolute;
 	z-index: -2;
 }
 #basketball{
 	position: absolute;
-	margin-left: calc(50% - 55px);
-	width: 110px;
+	margin-left: calc(50% - 27.5px);
+	width: 55px;
 	z-index: 8;
 }
 #korgCount {
-	width: 40px;
-	height: 30px;
-	margin-left: calc(50% - 20px);
-	bottom: 80px;
+	width: 20px;
+	height: 15px;
+	margin-left: calc(50% - 10px);
+	bottom: 40px;
 	position: absolute;
 	z-index: 10;
 	background-color: green;

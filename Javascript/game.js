@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var z = 0;
   var scoreNow = 0;
-  var ballSpeed = 2000;
+  var ballSpeed = 1800;
   var scoreChange = 10;
   var scoreChangeMeter = 10;
   var finalScore = 0;
@@ -80,9 +80,9 @@ $(document).ready(function(){
   }
 
   function moveHoop(a) {
-    a = a + -70;
-    var b = a + -50;
-    var c = a + 50;
+    a = a + -35;
+    var b = a + -25;
+    var c = a + 25;
 
     $("#korg").css("marginLeft", a + "px");
     $("#plank").css("marginLeft", b + "px");
@@ -119,7 +119,7 @@ $(document).ready(function(){
     {
       scoreNow++;
       $("#currentScore").text(scoreNow);
-      changeSpeed(scoreNow);
+      //changeSpeed(scoreNow);
       z = 0;
     }
     else //Game over!
