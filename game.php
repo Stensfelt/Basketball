@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,7 +9,7 @@
 	</head>
 	<body>
 		<div id="menu">
-			<div id="homeButtonDiv" class="inMenu" onclick="location.href='index.html';">
+			<div id="homeButtonDiv" class="inMenu" onclick="location.href='index.php';">
 				<img id="home" class="symbol" src="images/Home.png" alt="Home">
 			</div>
 			<div id="muteDiv" class="inMenu">
@@ -22,9 +23,10 @@
 		<div id="korgDiv">
 			<fieldset id="gameOverSummary"></fieldset>
 
-			<div id="startGameDiv"><p id="startGameParagraph">Start</p></div>
-			<div id="gameOverDiv"><p id="gameOverParagraph">Game over</p></div>
-			<div id="finalScore"><p id="finalScoreParagraph">0</p></div>
+			<div id="startGameDiv"><p class="paragraph" id="startGameParagraph">Start</p></div>
+			<div class="gameOver" id="gameOverDiv"><p class="paragraph" id="gameOverParagraph">Game over</p></div>
+			<div class="gameOver" id="finalScore"><p class="paragraph" id="finalScoreParagraph">0</p></div>
+			<div class="gameOver" id="saveScore" onclick="location.href='leaderboards.php';"><p class="paragraph" id="saveScoreParagraph">See High scores</p></div>
 
 			<img id="plank" src="images/Plank.png">
 			<img id="korg" src="images/Korg2.png">

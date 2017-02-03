@@ -67,32 +67,39 @@
 	cursor: pointer;
 	box-shadow: 4px 4px 8px -2px rgba(50, 50, 50, 0.75);
 }
-#startGameParagraph{
+
+.paragraph{
 	margin-top: 10px;
 	margin-bottom: 0;
 }
 #gameOverDiv{
   	bottom: 480px;
-	background-color: white;
-	font-family: college;
-	position: absolute;
-	margin-left: calc(50% - 130px);
-	z-index: 9;
-	color: #891811;
-	font-size: 65px;
-	width: 260px;
-	text-align: center;
-  	display: none;
+    font-family: college;
 }
-#gameOverParagraph{
-	margin-top: 10px;
-	margin-bottom: 0;
-}
-
 #finalScore{
-  	bottom: 350px;
-	background-color: white;
-	font-family: college;
+  	bottom: 370px;
+}
+#saveScore{
+  display: none;
+  font-size: 25px !important;
+  bottom: 300px;
+  background-color: white;
+  font-family: regular;
+  border: 1px solid grey;
+  position: absolute;
+  margin-left: calc(50% - 90px);
+  z-index: 9;
+  color: #891811;
+  font-size: 40px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px -2px rgba(50, 50, 50, 0.75);
+}
+.gameOver{
+  background-color: white;
+	font-family: regular;
 	position: absolute;
 	margin-left: calc(50% - 130px);
 	z-index: 9;
@@ -100,11 +107,7 @@
 	font-size: 65px;
 	width: 260px;
 	text-align: center;
-  	display: none;
-}
-#finalScoreParagraph {
-	margin-top: 10px;
-	margin-bottom: 0;
+  display: none;
 }
 
 
