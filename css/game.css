@@ -72,18 +72,17 @@
 	margin-bottom: 0;
 }
 #gameOverDiv{
-	margin-top: 140px;
+  bottom: 480px;
 	background-color: white;
 	font-family: college;
 	position: absolute;
-	margin-left: calc(50% - 90px);
+	margin-left: calc(50% - 130px);
 	z-index: 9;
 	color: #891811;
-	font-size: 60px;
+	font-size: 65px;
 	width: 260px;
 	text-align: center;
   display: none;
-  border: 1px solid;
 }
 #gameOverParagraph{
 	margin-top: 10px;
@@ -91,7 +90,8 @@
 }
 
 #gameOverSummary {
-  margin-top: 100px;
+  background-color: white;
+  bottom: 200px;
   width: 300px;
   position: absolute;
   height: 350px;
