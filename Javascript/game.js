@@ -7,7 +7,10 @@ $(document).ready(function(){
     document.getElementById("korgDiv").onmousemove = function(){getMouseCoordinates()};
     $("#korg").css("opacity", "initial");
     $("#plank").css("opacity", "initial");
-    $("#basketball").css("opacity", "initial"); 
+    $("#basketball").css("opacity", "initial");
+    $("#gameOverDiv").css("display", "none");
+    $("#gameOverSummary").css("display", "none");
+
     playMusic();
     pauseMusic2();
     if ($("#startGameParagraph").text() == "Paused")
@@ -34,7 +37,7 @@ $(document).ready(function(){
     document.getElementById("game_over").currentTime = 1.2;
     document.getElementById("game_over").play();
   }
-  
+
   function pauseMusic() {
     document.getElementById("lushlife").pause();
   }
@@ -48,17 +51,17 @@ $(document).ready(function(){
     if (document.getElementById("lushlife").muted == false && document.getElementById("game_over").muted == false) {
       document.getElementById("lushlife").muted = true;
       document.getElementById("game_over").muted = true;
-      $("#mute").attr("src", "images/Mutefalse.png");  
+      $("#mute").attr("src", "images/Mutefalse.png");
     }
     else {
       document.getElementById("lushlife").muted = false;
       document.getElementById("game_over").muted = false;
-      $("#mute").attr("src", "images/Mute.png"); 
+      $("#mute").attr("src", "images/Mute.png");
     }
   }
 
   function goal(obj1, obj2) {
-    
+
     var rect1 = obj1.getBoundingClientRect();
     var rect2 = obj2.getBoundingClientRect();
 
@@ -74,28 +77,28 @@ $(document).ready(function(){
       var x = event.clientX;     // Hämtar x-koordinater för musen
       moveHoop(x)
   }
-  
+
   function moveHoop(a) {
     a = a + -70;
     var b = a + -50;
     var c = a + 50;
-  
+
     $("#korg").css("marginLeft", a + "px");
     $("#plank").css("marginLeft", b + "px");
     $("#korgCount").css("marginLeft", c + "px");
   }
-  
+
   function randomBasketBalls() {
     $("#basketball").css("marginTop", "0px");
     randomX();
     moveBall();
   }
-  
+
   function randomX(){
     xCoordinate = Math.floor((Math.random() * (screenSize - 110)));
     $("#basketball").css("marginLeft", xCoordinate + "px");
   }
-  
+
   function moveBall() {
     $("#basketball").animate({marginTop: screenSizeHeight}, {
       duration: 1500,
@@ -111,7 +114,7 @@ $(document).ready(function(){
   }
 
   function checkScore() {
-    if (z > 0) 
+    if (z > 0)
     {
       scoreNow++;
       $("#currentScore").text(scoreNow);
@@ -120,7 +123,12 @@ $(document).ready(function(){
     else
     {
       $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
-      $("#startGameParagraph").text("Game over");
+      $("#startGameParagraph").text("Try again");
+      $("#startGameDiv").css("marginTop", "380px");
+      $("#gameOverDiv").css("display", "block");
+      $("#gameOverSummary").css("display", "block");
+
+
       $("#korg").css("opacity", "0.6");
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
@@ -140,12 +148,12 @@ $(document).ready(function(){
 
   $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
     var isAnimating = $("#basketball").is(':animated'); //Returnerar True om variabeln genomgår en animation
-  
+
     if (isAnimating == false) //Om animationen är pausad
     {
       if (e.keyCode == 32) //Om mellanslag trycks ner (keyCode för mellanslag är 0)
       {
-        if ($("#startGameParagraph").text() == "Game over")
+        if ($("#startGameParagraph").text() == "Try again")
         {
 
         }
@@ -158,9 +166,9 @@ $(document).ready(function(){
           $("#plank").css("opacity", "initial");
           $("#basketball").css("opacity", "initial");
           pauseMusic2();
-          playMusic(); 
+          playMusic();
         }
-         
+
       }
     }
     else //Om animation inte är pausad
@@ -169,7 +177,9 @@ $(document).ready(function(){
         {
           $("#startGameDiv").css("display", "initial"); //Gör startknappen till sitt css-ursprungsläge
           $("#startGameParagraph").text("Paused"); //Gör om texten från "Start" till "Paused"
-          document.getElementById("korgDiv").onmousemove = false; //Avaktiverar rörelsen för korg och plank 
+          $("#startGameDiv").css("marginTop", "210px");
+
+          document.getElementById("korgDiv").onmousemove = false; //Avaktiverar rörelsen för korg och plank
           $("#basketball").stop();  //Pausar animationen
           $("#korg").css("opacity", "0.6");
           $("#plank").css("opacity", "0.6");
@@ -182,7 +192,8 @@ $(document).ready(function(){
 
   var screenSize = $(window).width();
   var screenSizeHeight = $(window).height();
-  
+
+
   $(window).resize(function(){
     screenSize = $(window).width();
   });
