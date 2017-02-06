@@ -125,7 +125,7 @@ $(document).ready(function(){
     {
       scoreNow++;
       $("#currentScore").text(scoreNow);
-      //changeSpeed(scoreNow);
+      changeSpeed(scoreNow);
       z = 0;
     }
     else //Game over!
@@ -160,9 +160,9 @@ $(document).ready(function(){
 
   function changeSpeed(currentScore) {
     if (currentScore >= scoreChange) {
-      ballSpeed = ballSpeed * 0.8;
+      ballSpeed = ballSpeed * 0.9;
       scoreChange = scoreChange + scoreChangeMeter;
-      scoreChangeMeter = scoreChangeMeter * 1.2;
+      scoreChangeMeter = scoreChangeMeter + 5;
     }
   }
 
