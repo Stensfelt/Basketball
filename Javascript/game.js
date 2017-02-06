@@ -56,11 +56,13 @@ $(document).ready(function(){
   function mute() {
     if (document.getElementById("lushlife").muted == false && document.getElementById("game_over").muted == false) {
       document.getElementById("lushlife").muted = true;
+      document.getElementById("scoreSound").muted = true;
       document.getElementById("game_over").muted = true;
       $("#mute").attr("src", "images/Mutefalse.png");
     }
     else {
       document.getElementById("lushlife").muted = false;
+      document.getElementById("scoreSound").muted = false;
       document.getElementById("game_over").muted = false;
       $("#mute").attr("src", "images/Mute.png");
     }
@@ -148,9 +150,9 @@ $(document).ready(function(){
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
       document.getElementById("korgDiv").onmousemove = false;
-      
+
       reset();
-      
+
       $("#currentScore").text(scoreNow);
       pauseMusic();
       playMusic2();
@@ -160,7 +162,7 @@ $(document).ready(function(){
         $("#basketball").stop();
       }
 
-      
+
     }
   }
 
@@ -178,7 +180,7 @@ $(document).ready(function(){
     var marginToGo = totalDistanceToGo - currentMarginTop;
     var percent = marginToGo / totalDistanceToGo;
     var newSpeed = percent * saveSpeed;
-    
+
     if (newSpeed == 0)
     {
       ballSpeed = 1800;

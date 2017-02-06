@@ -79,9 +79,9 @@
 #finalScore{
   	bottom: 370px;
 }
-#saveScore{
+#leaderboards{
   display: none;
-  font-size: 25px !important;
+  font-size: 30px !important;
   bottom: 300px;
   background-color: white;
   font-family: regular;

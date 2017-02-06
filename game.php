@@ -26,7 +26,7 @@
 			<div id="startGameDiv"><p class="paragraph" id="startGameParagraph">Start</p></div>
 			<div class="gameOver" id="gameOverDiv"><p class="paragraph" id="gameOverParagraph">Game over</p></div>
 			<div class="gameOver" id="finalScore"><p class="paragraph" id="finalScoreParagraph">0</p></div>
-			<div class="gameOver" id="saveScore" onclick="location.href='leaderboards.php';"><p class="paragraph" id="saveScoreParagraph">Leaderboards</p></div>
+			<div class="gameOver" id="leaderboards" onclick="location.href='leaderboards.php';"><p class="paragraph" id="saveScoreParagraph">Leaderboards</p></div>
 
 			<img id="plank" src="images/Plank.png">
 			<img id="korg" src="images/Korg2.png">
