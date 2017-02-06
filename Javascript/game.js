@@ -145,7 +145,6 @@ $(document).ready(function(){
       $("#finalScore").text(finalScore);
       $(".gameOver").css("display", "block");
 
-
       $("#korg").css("opacity", "0.6");
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
@@ -161,8 +160,11 @@ $(document).ready(function(){
       {
         $("#basketball").stop();
       }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d4f99edc657e869129513dc0d6e4589996239350
     }
   }
 
@@ -199,6 +201,12 @@ $(document).ready(function(){
     scoreChangeMeter = 10;
     z = 0;
   }
+   $(window).keypress(function(e) {
+    if (e.keyCode == 109)
+    {
+      mute();
+    }
+  });
 
   $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
     var isAnimating = $("#basketball").is(':animated'); //Returnerar True om variabeln genomgår en animation
