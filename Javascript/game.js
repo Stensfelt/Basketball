@@ -83,7 +83,7 @@ $(document).ready(function(){
 
   function getMouseCoordinates(){
       var x = event.clientX;     // Hämtar x-koordinater för musen
-      moveHoop(x)
+      moveHoop(x);
   }
 
   function moveHoop(a) {
@@ -160,6 +160,7 @@ $(document).ready(function(){
       {
         $("#basketball").stop();
       }
+
     }
   }
 
