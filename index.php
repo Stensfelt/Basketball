@@ -17,6 +17,9 @@ if(isset($_POST['formSubmit'])){
 		<div id="leftImage">
 			<img src="images/nba_background.png" id="left">
 		</div>
+		<div id="rightImage">
+			<img src="images/nba_background2.png" id="right">
+		</div>
 		<div id="logoDiv">
 			<img src="images/lush_logo.png" id="logo">
 		</div>
