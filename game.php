@@ -36,7 +36,7 @@
 		</div>
 
 		<audio controls id="lushlife" loop>
-			<source id="lush" src="sounds/lushlife.mp3" type="audio/mpeg">
+			<source id="lush" src="sounds/new_lushlife.mp3" type="audio/mpeg">
 		</audio>
 		<audio controls id="game_over">
 			<source id="game_over" src="sounds/game_over.mp3" type="audio/mpeg">
