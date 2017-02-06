@@ -7,6 +7,7 @@ $(document).ready(function(){
   var scoreChangeMeter = 10;
   var finalScore = 0;
   document.getElementById("scoreSound").volume = 0.2;
+  document.getElementById("game_over").volume = 0.2;
 
   $("#startGameDiv").click(function(){
     $("#startGameDiv").css("display", "none");
