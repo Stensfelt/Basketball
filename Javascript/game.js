@@ -195,8 +195,8 @@ $(document).ready(function(){
     scoreChangeMeter = 10;
     z = 0;
   }
-   $(window).keypress(function(e) {
-    if (e.keyCode == 109)
+   $(window).keydown(function(e) {
+    if (e.keyCode == 109 || e.keyCode == 77)
     {
       mute();
     }
