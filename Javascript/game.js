@@ -160,11 +160,6 @@ $(document).ready(function(){
       {
         $("#basketball").stop();
       }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d4f99edc657e869129513dc0d6e4589996239350
     }
   }
 
