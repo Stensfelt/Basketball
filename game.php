@@ -41,5 +41,8 @@
 		<audio controls id="game_over">
 			<source id="game_over" src="sounds/game_over.mp3" type="audio/mpeg">
 		</audio>
+		<audio id="scoreSound">
+			<source id="scoreSound" src="sounds/pop.mp3" type="audio/mpeg">
+		</audio>
 	</body>
 </html>

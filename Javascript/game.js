@@ -40,6 +40,10 @@ $(document).ready(function(){
     document.getElementById("game_over").play();
   }
 
+  function playScoreSound() {
+    document.getElementById("scoreSound").play();
+  }
+
   function pauseMusic() {
     document.getElementById("lushlife").pause();
   }
@@ -120,6 +124,7 @@ $(document).ready(function(){
       scoreNow++;
       $("#currentScore").text(scoreNow);
       changeSpeed(scoreNow);
+      playScoreSound();
       z = 0;
     }
     else //Game over!
