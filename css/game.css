@@ -1,9 +1,9 @@
 @font-face {
-  font-family: regular;
+  font-family: "regular";
   src: url(../fonts/JACKPORT_REGULAR_NCV.ttf);
 }
 @font-face {
-  font-family: college;
+  font-family: "college";
   src: url(../fonts/JACKPORT_COLLEGE_NCV.ttf);
 }
 
