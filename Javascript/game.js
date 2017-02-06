@@ -6,10 +6,15 @@ $(document).ready(function(){
   var scoreChange = 10;
   var scoreChangeMeter = 10;
   var finalScore = 0;
+  document.getElementById("scoreSound").volume = 0.2;
 
   $("#startGameDiv").click(function(){
     $("#startGameDiv").css("display", "none");
-    document.getElementById("korgDiv").onmousemove = function(){getMouseCoordinates()};
+    document.getElementById("korgDiv").onmousemove = function(event){
+      event = event || window.event;
+      var mouseX = event.clientX;
+      moveHoop(mouseX);
+    }
     $("#korg").css("opacity", "initial");
     $("#plank").css("opacity", "initial");
     $("#basketball").css("opacity", "initial");
@@ -80,12 +85,6 @@ $(document).ready(function(){
       z++;
     }
   }
-
-  function getMouseCoordinates(){
-      var x = event.clientX;     // Hämtar x-koordinater för musen
-      moveHoop(x);
-  }
-
   function moveHoop(a) {
     a = a + -35;
     var b = a + -25;
@@ -197,14 +196,14 @@ $(document).ready(function(){
     scoreChangeMeter = 10;
     z = 0;
   }
-   $(window).keypress(function(e) {
-    if (e.keyCode == 109)
+   $(window).keydown(function(e) {
+    if (e.keyCode == 109 || e.keyCode == 77)
     {
       mute();
     }
   });
 
-  $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
+  $(window).keydown(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
     var isAnimating = $("#basketball").is(':animated'); //Returnerar True om variabeln genomgår en animation
 
     if (isAnimating == false) //Om animationen är pausad
@@ -217,7 +216,11 @@ $(document).ready(function(){
         }
         else
         {
-          document.getElementById("korgDiv").onmousemove = function(){getMouseCoordinates()};   //Sätter igång rörelsen för korg och plank
+          document.getElementById("korgDiv").onmousemove = function(event){   //Sätter igång rörelsen för korg och plank
+            event = event || window.event;
+            var mouseX = event.clientX;
+            moveHoop(mouseX);
+          }  
           $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
           moveBall();  //Kör igång animationen
           $("#korg").css("opacity", "initial");
