@@ -30,7 +30,7 @@ if(isset($_POST['formSubmit'])){
 					<input type="text" name="nameInput" id="nameInput"
 						<?php
 					 if(!isset($_SESSION['username'])) {
-							echo "placeholder='Enter username to show your high score'";
+							echo "placeholder='Enter username...'";
 						} else {
 							echo "value=".$_SESSION['username'];
 						}
@@ -52,7 +52,7 @@ if(isset($_POST['formSubmit'])){
 							echo $_SESSION['username'];
 					} ?>
 			</div>
-			<div class="menuButton" id="buttonLeader" onclick="location.href='leaderboards.php';">High scores</div>
+			<div class="menuButton" id="buttonLeader" onclick="location.href='leaderboards.php';">leaderboards</div>
     </div>
 
 

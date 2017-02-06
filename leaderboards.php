@@ -38,6 +38,7 @@ session_start();
 					echo "<td>".$row['username']."</td>";
 					echo "<td>".$row['score']."</td>";
 					echo "</tr>";
+					$rank++;
 				}
 				?>
       </table>
