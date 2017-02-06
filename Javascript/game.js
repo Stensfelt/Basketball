@@ -114,12 +114,6 @@ $(document).ready(function(){
     });
   }
 
-  /*function addBall(number) {
-    $("#basketball").after('<img id="basketball' + number + '" class="basketballs" src="images/Boll.png">');
-    var newBall = "basketball" + number;
-    randomBasketBalls(newBall);
-  }*/
-
   function checkScore() {
     if (z > 0) //Score!
     {
