@@ -1,43 +1,52 @@
-function playerName ()
-{
-    var inputName = document.getElementById("nameInput").value;
-    var outputName = "";
+$(document).ready(function(){
 
-    if (inputName == "")
+
+  $("#buttonOk").click(function(){
+
+      var inputName = document.getElementById("nameInput").value;
+      var outputName = "";
+
+
+
+      if (inputName == "")
+        {
+
+            return false;
+        }
+        else
+        {
+            outputName = inputName;
+        }
+        document.getElementById("currentPlayer").innerHTML = outputName;
+  });
+
+  $("#buttonUsername").click(function(){
+
+      document.getElementById("buttonUsername").style.opacity = "0";
+
+      document.getElementById("leftImage").style.opacity = "0.4";
+      document.getElementById("logoDiv").style.opacity = "0.4";
+      document.getElementById("menu").style.opacity = "0.4";
+
+      if (document.getElementById("enterName").style.display == "block")
       {
-          alert("Skriv in ditt namn");
-          return false;
+        document.getElementById("enterName").style.display = "none";
       }
       else
       {
-          outputName = inputName;
+        document.getElementById("enterName").style.display = "block";
       }
-      document.getElementById("currentPlayer").innerHTML = outputName;
-}
+  });
 
-function namePopup ()
-{
-    document.getElementById("buttonUsername").style.opacity = "0";
 
-    document.getElementById("leftImage").style.opacity = "0.4";
-    document.getElementById("logoDiv").style.opacity = "0.4";
-    document.getElementById("menu").style.opacity = "0.4";
+  $("#cancel").click(function(){
 
-    if (document.getElementById("enterName").style.display == "block")
-    {
-      document.getElementById("enterName").style.display = "none";
-    }
-    else
-    {
-      document.getElementById("enterName").style.display = "block";
-    }
-}
-function exitName ()
-{
-  document.getElementById("enterName").style.display = "none";
-  document.getElementById("buttonUsername").style.opacity = "1";
+    document.getElementById("enterName").style.display = "none";
+    document.getElementById("buttonUsername").style.opacity = "1";
 
-  document.getElementById("leftImage").style.opacity = "1";
-  document.getElementById("logoDiv").style.opacity = "1";
-  document.getElementById("menu").style.opacity = "1";
-}
+    document.getElementById("leftImage").style.opacity = "0.6";
+    document.getElementById("logoDiv").style.opacity = "1";
+    document.getElementById("menu").style.opacity = "1";
+  });
+
+});

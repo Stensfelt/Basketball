@@ -4,7 +4,7 @@
   z-index: 1;
   width: 200px;
   margin-left: calc(50% - 100px);
-  margin-top: 9%;
+  margin-top: 110px;
   text-align: center;
 }
 #nameInput {
@@ -38,7 +38,7 @@
   z-index: -1;
   opacity: 0.6;
   margin-top: 110px;
-  margin-left:-0,5%;
+  margin-right: -0.5%;
 }
 #left {
   width: 95%;

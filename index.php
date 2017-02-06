@@ -11,6 +11,7 @@ if(isset($_POST['formSubmit'])){
 		<meta charset="utf-8"/>
 		<title>Lush Ball</title>
     <link rel="stylesheet" href="css/main.css?=vkod">
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="Javascript/menu.js"> </script>
 	</head>
 	<body>
@@ -22,9 +23,6 @@ if(isset($_POST['formSubmit'])){
 		</div>
 		<div id="logoDiv">
 			<img src="images/lush_logo.png" id="logo">
-		</div>
-		<div ="playerName">
-			<p id="currentPlayer"></p>
 		</div>
 
 		<div id="enterName">
@@ -39,15 +37,15 @@ if(isset($_POST['formSubmit'])){
 						}
 							?> >
 									<br>
-					<input type="button" name="cancel" value="Cancel" onclick="exitName()" class="nameBtn">
-					<input type="submit" name="formSubmit" value="OK!" class="nameBtn" id="buttonOk" onclick="playerName()">
+					<input type="button" name="cancel" value="Cancel" class="nameBtn" id="cancel">
+					<input type="submit" name="formSubmit" value="OK!" class="nameBtn" id="buttonOk">
 				</form>
 			</div>
 		</div>
 
     <div id="menu">
       <div class="menuButton" id="buttonPlay" onclick="location.href='game.php';">Play</div>
-      <div class="menuButton" id="buttonUsername"onclick="namePopup()">
+      <div class="menuButton" id="buttonUsername">
 				<?php
 				if(!isset($_SESSION['username'])){
 								echo "Pick a name";
