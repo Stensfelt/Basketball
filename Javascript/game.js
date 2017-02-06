@@ -202,7 +202,7 @@ $(document).ready(function(){
     }
   });
 
-  $(window).keypress(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
+  $(window).keydown(function(e) {   //keypress är en inbyggd funktion som tar reda på vilken tangent som trycks på genom s.k. "keycodes", se nedan
     var isAnimating = $("#basketball").is(':animated'); //Returnerar True om variabeln genomgår en animation
 
     if (isAnimating == false) //Om animationen är pausad
