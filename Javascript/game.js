@@ -2,6 +2,7 @@ $(document).ready(function(){
   var z = 0;
   var scoreNow = 0;
   var ballSpeed = 1800;
+  var saveSpeed = ballSpeed;
   var scoreChange = 10;
   var scoreChangeMeter = 10;
   var finalScore = 0;
@@ -108,11 +109,13 @@ $(document).ready(function(){
     $("#basketball").animate({marginTop: screenSizeHeight}, {
       duration: ballSpeed,
       easing: "linear",
-      step: function(){
+      step: function(currentTop){
         goal($("#basketball")[0], $("#korgCount")[0]);
+        calculateSpeed(currentTop);
       },
       queue: false,
       complete: function(){
+        ballSpeed = saveSpeed;
         checkScore();
         randomBasketBalls();}
     });
@@ -140,12 +143,14 @@ $(document).ready(function(){
       $("#finalScore").text(finalScore);
       $(".gameOver").css("display", "block");
 
+
       $("#korg").css("opacity", "0.6");
       $("#plank").css("opacity", "0.6");
       $("#basketball").css("opacity", "0.6");
       document.getElementById("korgDiv").onmousemove = false;
-
+      
       reset();
+      
       $("#currentScore").text(scoreNow);
       pauseMusic();
       playMusic2();
@@ -154,20 +159,40 @@ $(document).ready(function(){
       {
         $("#basketball").stop();
       }
+
+      
     }
   }
 
   function changeSpeed(currentScore) {
     if (currentScore >= scoreChange) {
       ballSpeed = ballSpeed * 0.9;
+      saveSpeed = ballSpeed;
       scoreChange = scoreChange + scoreChangeMeter;
       scoreChangeMeter = scoreChangeMeter + 5;
+    }
+  }
+  function calculateSpeed(currentTop){
+    var totalDistanceToGo = screenSizeHeight;
+    var currentMarginTop = currentTop;
+    var marginToGo = totalDistanceToGo - currentMarginTop;
+    var percent = marginToGo / totalDistanceToGo;
+    var newSpeed = percent * saveSpeed;
+    
+    if (newSpeed == 0)
+    {
+      ballSpeed = 1800;
+    }
+    else
+    {
+      ballSpeed = newSpeed;
     }
   }
 
   function reset() {
     scoreNow = 0;
-    ballSpeed = 2000;
+    ballSpeed = 1800;
+    saveSpeed = ballSpeed;
     scoreChange = 10;
     scoreChangeMeter = 10;
     z = 0;
