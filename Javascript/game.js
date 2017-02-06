@@ -10,7 +10,11 @@ $(document).ready(function(){
 
   $("#startGameDiv").click(function(){
     $("#startGameDiv").css("display", "none");
-    document.getElementById("korgDiv").onmousemove = function(){getMouseCoordinates()};
+    document.getElementById("korgDiv").onmousemove = function(event){
+      event = event || window.event;
+      var mouseX = event.clientX;
+      moveHoop(mouseX);
+    }
     $("#korg").css("opacity", "initial");
     $("#plank").css("opacity", "initial");
     $("#basketball").css("opacity", "initial");
@@ -81,12 +85,6 @@ $(document).ready(function(){
       z++;
     }
   }
-
-  function getMouseCoordinates(){
-      var x = event.clientX;     // Hämtar x-koordinater för musen
-      moveHoop(x)
-  }
-
   function moveHoop(a) {
     a = a + -35;
     var b = a + -25;
@@ -217,7 +215,11 @@ $(document).ready(function(){
         }
         else
         {
-          document.getElementById("korgDiv").onmousemove = function(){getMouseCoordinates()};   //Sätter igång rörelsen för korg och plank
+          document.getElementById("korgDiv").onmousemove = function(event){   //Sätter igång rörelsen för korg och plank
+            event = event || window.event;
+            var mouseX = event.clientX;
+            moveHoop(mouseX);
+          }  
           $("#startGameDiv").css("display", "none"); //Gör "Start"-knappen osynlig
           moveBall();  //Kör igång animationen
           $("#korg").css("opacity", "initial");
