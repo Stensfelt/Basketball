@@ -1,7 +1,10 @@
 $(document).ready(function(){
-
-
-
+  $("#buttonOk").click(function(){
+    if (Trim(document.getElementById("nameInput").value) == "")
+    {
+      return false;
+    }
+  });
   $("#buttonUsername").click(function(){
 
       document.getElementById("buttonUsername").style.opacity = "0";
@@ -38,5 +41,7 @@ $(document).ready(function(){
       window.location.href = "leaderboards.php";
     }
   });
-
+  function Trim(stringToBeTrimmed) {
+    return stringToBeTrimmed.replace(/\s+/g,'');
+}
 });
