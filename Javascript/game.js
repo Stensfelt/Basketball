@@ -86,6 +86,12 @@ $(document).ready(function(){
       z++;
     }
   }
+  
+  //moveHoop()
+  //Funktion som tar emot ett argument "a" som representerar koordinaten för muspekarens position på x-axeln.
+  //Denna koordinat tillämpar vi sedan på elementen "korg", "plank", samt "korgCount" via margin-left för att styra dessas position på x-axeln. 
+  //På så sätt flyttas dessa element längs med muspekarens position
+  //För att elementens centerpunkt (och inte deras vänstra kant) ska följa muspekarens position så justeras variablerna "a", "b", och "c" med lämpligt mått
   function moveHoop(a) {
     a = a + -35;
     var b = a + -25;
@@ -96,12 +102,19 @@ $(document).ready(function(){
     $("#korgCount").css("marginLeft", c + "px");
   }
 
+  //randomBasketballs()
+  //Funktion som återställer/flyttar bollens position på y-axeln högst upp på sidan. 
+  //Kör sedan igång funktionen randomX för att möjliggöra att bollen kan "spawna" på slumpmässiga ställen på x-axeln
+  //Slutligen körs funktionen "moveBall" igång som startar bollens animation.
   function randomBasketBalls() {
     $("#basketball").css("marginTop", "0px");
     randomX();
     moveBall();
   }
 
+  //randomX()
+  //Funktion som genererar en slumpmässig siffra som sedan tillämpas på basketbollens position på x-axeln så fort animationen "moveBall" går igång
+  //På så sätt "spawnar" bollen på slumpmässiga positioner på x-axeln
   function randomX(){
     xCoordinate = Math.floor((Math.random() * (screenSize - 110)));
     $("#basketball").css("marginLeft", xCoordinate + "px");
@@ -115,9 +128,7 @@ $(document).ready(function(){
         calculateSpeed(currentTop);
         $("#marginTop").text("Margin-top: " + currentTop);
         $("#speed").text("Speed: " + ballSpeed);
-        goal($("#basketball")[0], $("#korgCount")[0]);
-        
-        
+        goal($("#basketball")[0], $("#korgCount")[0]); 
       },
       queue: false,
       complete: function(){
@@ -176,6 +187,11 @@ $(document).ready(function(){
       scoreChangeMeter = scoreChangeMeter + 5;
     }
   }
+
+  //calculateSpeed()
+  //Funktion som kalkylerar hur långt bollen har kvar att färdas i sin animation, och sedan anpassar farten till det.
+  //På så sätt har bollen en konstant fart genom hela animationens gång oavsett om användaren pausar och startar spelet (vilket säger åt animationen att stoppa och starta på nytt)
+  //Utan denna funktion hade tiden som det ska ta för bollen att färdas en viss sträcka alltid varit detsamma, oavsett om sträckan som bollen har kvar att färdas skulle förändras
   function calculateSpeed(currentT){
     var totalDistanceToGo = screenSizeHeight;
     var currentMarginTop = currentT;
