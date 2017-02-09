@@ -16,7 +16,7 @@ $(document).ready(function(){
       var mouseX = event.clientX;
       moveHoop(mouseX);
     }
-    $(document).on('touchmove', '#korgDiv', function(e) {
+    $("#korgDiv").on("touchmove", function(e) {
       var xPos = e.originalEvent.touches[0].pageX;
       moveHoop(xPos);
     });
