@@ -89,7 +89,7 @@ $(document).ready(function(){
   function moveHoop(a) {
     a = a + -35;
     var b = a + -25;
-    var c = a + 25;
+    var c = a + 30;
 
     $("#korg").css("marginLeft", a + "px");
     $("#plank").css("marginLeft", b + "px");
