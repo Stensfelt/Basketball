@@ -1,10 +1,6 @@
 <?php
 session_start();
 if(isset($_POST['formSubmit'])){
-	if ($_POST['nameInput'] == "")
-	{
-		$_POST['nameInput'] = "Anonymous";
-	}
  	$_SESSION['username'] = $_POST['nameInput'];
  }
  ?>
