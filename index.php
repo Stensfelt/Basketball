@@ -14,7 +14,7 @@ if(isset($_POST['formSubmit'])){
 	<head>
 		<meta charset="utf-8"/>
 		<title>Lush Ball</title>
-    <link rel="stylesheet" href="css/main.css?=vkod">
+    <link rel="stylesheet" href="css/main.css">
 		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="Javascript/menu.js"> </script>
 	</head>
