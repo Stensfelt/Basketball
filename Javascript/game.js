@@ -16,6 +16,11 @@ $(document).ready(function(){
       var mouseX = event.clientX;
       moveHoop(mouseX);
     }
+    $(document).on('touchmove', '#korgDiv', function(e) {
+      var xPos = e.originalEvent.touches[0].pageX;
+      moveHoop(xPos);
+    });
+    
     $("#korg").css("opacity", "initial");
     $("#plank").css("opacity", "initial");
     $("#basketball").css("opacity", "initial");
