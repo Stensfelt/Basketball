@@ -28,7 +28,6 @@ if(isset($_POST['formSubmit'])){
 		<div id="logoDiv">
 			<img src="images/lush_logo.png" id="logo">
 		</div>
-
 		<div id="enterName">
 			<div id="nameBox">
 				<form id="nameForm" method="post">

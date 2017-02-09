@@ -1,24 +1,6 @@
 $(document).ready(function(){
 
 
-  /*$("#buttonOk").click(function(){
-
-      var inputName = document.getElementById("nameInput").value;
-      var outputName = "";
-
-
-
-      if (inputName == "")
-        {
-
-            return false;
-        }
-        else
-        {
-            outputName = inputName;
-        }
-        document.getElementById("currentPlayer").innerHTML = outputName;
-  });*/
 
   $("#buttonUsername").click(function(){
 
