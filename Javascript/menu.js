@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-  $("#buttonOk").click(function(){
+  /*$("#buttonOk").click(function(){
 
       var inputName = document.getElementById("nameInput").value;
       var outputName = "";
@@ -18,7 +18,7 @@ $(document).ready(function(){
             outputName = inputName;
         }
         document.getElementById("currentPlayer").innerHTML = outputName;
-  });
+  });*/
 
   $("#buttonUsername").click(function(){
 
@@ -36,6 +36,8 @@ $(document).ready(function(){
       {
         document.getElementById("enterName").style.display = "block";
       }
+      document.getElementById("buttonPlay").onclick = false;
+      document.getElementById("buttonLeader").onclick = false;
   });
 
 
@@ -47,6 +49,12 @@ $(document).ready(function(){
     document.getElementById("leftImage").style.opacity = "0.6";
     document.getElementById("logoDiv").style.opacity = "1";
     document.getElementById("menu").style.opacity = "1";
+    document.getElementById("buttonPlay").onclick = function(){
+      window.location.href = "game.php";
+    }
+    document.getElementById("buttonLeader").onclick = function(){
+      window.location.href = "leaderboards.php";
+    }
   });
 
 });

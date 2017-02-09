@@ -1,7 +1,11 @@
 <?php
 session_start();
 if(isset($_POST['formSubmit'])){
-	 $_SESSION['username'] = $_POST['nameInput'];
+	if ($_POST['nameInput'] == "")
+	{
+		$_POST['nameInput'] = "Anonymous";
+	}
+ 	$_SESSION['username'] = $_POST['nameInput'];
  }
  ?>
 
@@ -28,7 +32,7 @@ if(isset($_POST['formSubmit'])){
 		<div id="enterName">
 			<div id="nameBox">
 				<form id="nameForm" method="post">
-					<input type="text" name="nameInput" id="nameInput"
+					<input type="text" name="nameInput" id="nameInput" maxlength = "17"
 						<?php
 					 if(!isset($_SESSION['username'])) {
 							echo "placeholder='Enter username...'";

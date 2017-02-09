@@ -15,14 +15,14 @@
 }
 #korg{
 	width: 70px;
-	margin-left: calc(50% - 35px);
+	margin-left: calc(50% - 30px);
 	bottom: 0;
 	position: absolute;
 	z-index: 10;
 }
 #plank{
 	width: 120px;
-	margin-left: calc(50% - 60px);
+	margin-left: calc(50% - 55px);
 	bottom: 55px;
 	position: absolute;
 	z-index: -2;

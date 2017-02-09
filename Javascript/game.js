@@ -112,8 +112,12 @@ $(document).ready(function(){
       duration: ballSpeed,
       easing: "linear",
       step: function(currentTop){
-        goal($("#basketball")[0], $("#korgCount")[0]);
         calculateSpeed(currentTop);
+        $("#marginTop").text("Margin-top: " + currentTop);
+        $("#speed").text("Speed: " + ballSpeed);
+        goal($("#basketball")[0], $("#korgCount")[0]);
+        
+        
       },
       queue: false,
       complete: function(){
@@ -172,9 +176,9 @@ $(document).ready(function(){
       scoreChangeMeter = scoreChangeMeter + 5;
     }
   }
-  function calculateSpeed(currentTop){
+  function calculateSpeed(currentT){
     var totalDistanceToGo = screenSizeHeight;
-    var currentMarginTop = currentTop;
+    var currentMarginTop = currentT;
     var marginToGo = totalDistanceToGo - currentMarginTop;
     var percent = marginToGo / totalDistanceToGo;
     var newSpeed = percent * saveSpeed;

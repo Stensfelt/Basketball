@@ -19,7 +19,8 @@
 				<p id="currentScore">0</p>
 			</div>
 		</div>
-
+		<!-- <p id = "marginTop" style = "margin-top: 300px; position: absolute; font-size: 30px;">Margin-top: 0</p>
+		<p id = "speed" style = "margin-top: 400px; position: absolute; font-size: 30px;">Speed: 1800</p> -->
 		<div id="korgDiv">
 			<fieldset id="gameOverSummary"></fieldset>
 
